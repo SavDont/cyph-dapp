@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "367f51f8361635c75365963cdb678ccf",
+    "revision": "e9206d5386f520b47a9d0c622d06fa0e",
     "url": "/cyph-dapp/index.html"
   },
   {
-    "revision": "0fda41fd4116fe0aef66",
-    "url": "/cyph-dapp/static/css/2.87a71177.chunk.css"
+    "revision": "ec2b469ceaa21d3913da",
+    "url": "/cyph-dapp/static/css/2.8e3312e5.chunk.css"
   },
   {
-    "revision": "6a64be621bbcacb512a1",
+    "revision": "e17b56f352a2180efd1f",
     "url": "/cyph-dapp/static/css/main.1619c104.chunk.css"
   },
   {
-    "revision": "0fda41fd4116fe0aef66",
+    "revision": "ec2b469ceaa21d3913da",
     "url": "/cyph-dapp/static/js/2.843b9eed.chunk.js"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cyph-dapp/static/js/2.843b9eed.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6a64be621bbcacb512a1",
-    "url": "/cyph-dapp/static/js/main.e34008b3.chunk.js"
+    "revision": "e17b56f352a2180efd1f",
+    "url": "/cyph-dapp/static/js/main.9222f99f.chunk.js"
   },
   {
     "revision": "e63109c34fdeb2c22de9",
