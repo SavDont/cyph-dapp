@@ -17,7 +17,7 @@ This implementation queries and executes on a smart contract deployed to the Cos
   yarn install
   ```
 2. Start a local page connected to sandynet:
-   ```shell
-   yarn start:sandynet
-   ```
+  ```shell
+  yarn start:sandynet
+  ```
 3. Visit `localhost:3000/cyph-dapp`
