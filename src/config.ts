@@ -16,21 +16,21 @@ const local: AppConfig = {
   gasPrice: 0.025,
 };
 
-const heldernet: AppConfig = {
-  chainId: "hackatom-wasm",
-  chainName: "Heldernet",
-  addressPrefix: "cosmos",
-  rpcUrl: "https://rpc.heldernet.cosmwasm.com",
-  httpUrl: "https://lcd.heldernet.cosmwasm.com",
-  faucetUrl: "https://faucet.heldernet.cosmwasm.com",
-  feeToken: "ucosm",
-  stakingToken: "ustake",
+const sandynet: AppConfig = {
+  chainId: "sandynet-1",
+  chainName: "sandynet-1",
+  addressPrefix: "wasm",
+  rpcUrl: "https://rpc.sandynet.cosmwasm.com:443",
+  httpUrl: "https://lcd.sandynet.cosmwasm.com",
+  faucetUrl: "https://faucet.sandynet.cosmwasm.com",
+  feeToken: "ubay",
+  stakingToken: "umaya",
   coinMap: {
-    ucosm: { denom: "COSM", fractionalDigits: 6 },
-    ustake: { denom: "STAKE", fractionalDigits: 6 },
+    ubay: { denom: "BAY", fractionalDigits: 6 },
+    umaya: { denom: "MAYA", fractionalDigits: 6 },
   },
   gasPrice: 0.025,
 };
 
-const configs: NetworkConfigs = { local, heldernet };
+const configs: NetworkConfigs = { local, sandynet };
 export const config = getAppConfig(configs);

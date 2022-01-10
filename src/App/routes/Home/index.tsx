@@ -1,54 +1,70 @@
-import { Center, Stack } from "@cosmicdapp/design";
-import { useSdk } from "@cosmicdapp/logic";
-import React, { useState } from "react";
-import { BalanceResponse, QueryMsg } from "../../../contracts/types/cw20-base";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Typography } from "antd";
+
+import { useError } from "@cosmicdapp/logic";
+import { PageLayout, Loading } from "@cosmicdapp/design";
+import { EditOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons';
+
+import { GetAllResponse, QueryMsg } from "../../../contracts/types/cw-cyph";
+import { useCosmWasm } from "../../client";
+import { useEncrypt } from "../../encrypt";
+import { ErrorText, LightText, MainStack, PasswordStack } from "../../style";
+import { pathAdd, pathEdit, pathDelete } from "../../paths";
+
+const { Title } = Typography;
 
 export function Home(): JSX.Element {
-  const { getClient } = useSdk();
+  const { error, setError } =  useError();
+  const { address, getClient } = useCosmWasm();
+  const { decrypt } = useEncrypt();
+  const contractAddress = "wasm10ruqujapa6cg5lj5hufrqnpacwt78j445sltcw";
+  const [response, setResponse] = useState<GetAllResponse>();
+  const [loading, setLoading] = useState(false);
 
-  const [contract, setContract] = useState("");
-  const [address, setAddress] = useState("");
-  const [balance, setBalance] = useState("0");
+  useEffect(() => {
+    const client = getClient();
+    const queryPasswords: QueryMsg = { get_all: { owner: address } };
+    setLoading(true);
+    client
+      .queryContractSmart(contractAddress, queryPasswords)
+      .then( (result) => {
+        setResponse(result);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(Error(error).message);
+        setLoading(false);
+      });
+  }, [getClient, setError, address]);
 
-  function updateContract(event: React.ChangeEvent<HTMLInputElement>) {
-    const contract = event.target.value;
-    setContract(contract);
-  }
-
-  function updateAddress(event: React.ChangeEvent<HTMLInputElement>) {
-    const address = event.target.value;
-    setAddress(address);
-  }
-
-  async function queryBalance() {
-    if (!contract || !address) return;
-
-    const queryBalance: QueryMsg = { balance: { address } };
-
-    try {
-      const result: BalanceResponse = await getClient().queryContractSmart(contract, queryBalance);
-      setBalance(result.balance);
-    } catch {
-      setBalance("0");
-    }
-  }
-
-  return (
-    <Center>
-      <Stack>
-        <div>
-          <span>Enter CW20 contract address: </span>
-          <input value={contract} onChange={updateContract} />
-        </div>
-        <div>
-          <span>Enter address: </span>
-          <input value={address} onChange={updateAddress} />
-        </div>
-        <button onClick={queryBalance} disabled={!contract || !address}>
-          Submit
-        </button>
-        <div>Balance: {balance}</div>
-      </Stack>
-    </Center>
+  return  loading ? (
+    <Loading loadingText="Loading passwords..." />
+    ) : (
+    <PageLayout>
+      <MainStack>
+        <PasswordStack>
+        <Title level={2}>CYPH</Title>
+        <LightText>Your Passwords:</LightText>
+          {response && response.entries.map(({ name, password }) => (
+            <Typography>
+              <LightText>Name: {name}</LightText>
+              <LightText>Password: { decrypt(password) }</LightText>
+              <Link to={ `${pathEdit}/${name}`}>
+                <EditOutlined /> 
+              </Link>
+              <Link to={ `${pathDelete}/${name}`}>
+                <DeleteOutlined />
+              </Link>
+            </Typography>
+          ))}
+          {error && <ErrorText>{error}</ErrorText>}
+          <Link to={pathAdd}>
+            <PlusOutlined />
+          </Link>
+        </PasswordStack>
+      </MainStack>
+    </PageLayout>
   );
 }

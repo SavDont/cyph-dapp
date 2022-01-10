@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@cosmicdapp/design": "^0.4.5",
     "@cosmicdapp/logic": "^0.4.5",
+    "@cosmjs/cosmwasm-stargate": "^0.26.5",
+    "@cosmjs/proto-signing": "^0.26.5",
+    "@cosmjs/stargate": "^0.26.5",
+    "@types/crypto-js": "^4.1.0",
     "antd": "^4.5.4",
-    "formik": "^2.1.5",
+    "crypto-js": "^4.1.1",
+    "formik": "^2.2.9",
     "formik-antd": "^2.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -17,11 +23,10 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "REACT_APP_NETWORK=heldernet craco build",
+    "build": "REACT_APP_NETWORK=sandynet craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "start:coralnet": "REACT_APP_NETWORK=coralnet craco start",
-    "start:heldernet": "REACT_APP_NETWORK=heldernet craco start"
+    "start:sandynet": "REACT_APP_NETWORK=sandynet craco start"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +45,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^5.6.4",
+    "@keplr-wallet/types": "^0.9.10",
     "@testing-library/dom": "^7.22.1",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/react": "^10.4.8",
