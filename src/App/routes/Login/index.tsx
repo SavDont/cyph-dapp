@@ -72,7 +72,19 @@ export function Login(): JSX.Element {
             Connect Wallet
           </Button>
         </WelcomeStack>
-        <LightText>Built with CosmWasm and CosmJS by @savdont.</LightText>
+        <LightText>Built with&nbsp;
+          <a href="https://github.com/CosmWasm/cosmwasm"
+          target="_blank"
+          rel="noreferrer noopener">CosmWasm</a>
+          &nbsp;and&nbsp;
+          <a href="https://github.com/cosmos/cosmjs"
+          target="_blank"
+          rel="noreferrer noopener">CosmJS</a>
+          &nbsp;by&nbsp; 
+          <a href="https://github.com/SavDont/cyph-dapp"
+          target="_blank"
+          rel="noreferrer noopener">@savdont</a>.
+          </LightText>
       </MainStack>
     </PageLayout>
   );

@@ -1,4 +1,5 @@
 {
+  "homepage": "http://savdontamsetti.com/cyph-dapp/",
   "name": "cyph-dapp",
   "version": "0.1.0",
   "private": true,
@@ -26,7 +27,9 @@
     "build": "REACT_APP_NETWORK=sandynet craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "start:sandynet": "REACT_APP_NETWORK=sandynet craco start"
+    "start:sandynet": "REACT_APP_NETWORK=sandynet craco start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -64,6 +67,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
+    "gh-pages": "^3.2.3",
     "json-schema-ref-parser-cli": "file:src/contracts/dependencies/json-schema-ref-parser-cli",
     "json-schema-to-typescript-cli": "file:src/contracts/dependencies/json-schema-to-typescript-cli",
     "react-scripts": "3.4.3",

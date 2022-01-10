@@ -1,43 +1,23 @@
-# Demo app
+# cyph-dapp
+An end to end encrypted password manager dApp implementation in React using [CosmJS](https://github.com/cosmos/cosmjs).
+This dApp first attempts to connect to your local Keplr wallet to interact with the blockchain. Users are then asked to provide a master key. This master key is then used to encrypt/decrypt your passwords using [Crypto-JS](https://github.com/brix/crypto-js) AES functions. All updates to your passwords are first encrypted before sending to the blockchain for storage.
 
-## How to run demo app
+## Demo
+This implementation queries and executes on a smart contract deployed to the Cosmos testnet sandynet. The smart contract code can be found [here](https://github.com/SavDont/cw-cyph).
 
-1. Customize this `README.md` and `package.json`'s fields as you want.
+[Link to demo](https://savdontamsetti.com/cyph-dapp)
 
-2. In `[your-app]` directory, run:
+## How to run locally
 
-   ```shell
-   yarn install
-   ```
-
-3. And then:
-
-- If you want to connect to local chain [(how to set up)](https://docs.cosmwasm.com/getting-started/setting-env.html#run-local-node-optional):
+1. In `cyph-dapp` directory run:
   ```shell
-  yarn start
+  yarn install
   ```
-- If you want to connect to Heldernet:
-  ```shell
-  yarn start:heldernet
-  ```
-
-## Generate types from a contract
-
-The bootstraped project has [`cw20-base`](https://github.com/CosmWasm/cosmwasm-plus/tree/master/contracts/cw20-base) types included in `src/contracts/types`.
-
-In order to generate types from another contract you might need, follow these steps:
-
-1. Copy the contract into `src/contracts/[your-contract]`.
-
-2. In `src/contracts`, run:
-
+2. Start a local page connected to sandynet:
    ```shell
-   ./scripts/make_dts.sh ./[your-contract]
+   yarn start:sandynet
    ```
+3. Visit `localhost:3000/cyph-dapp`
 
-## Resources
-
-- CosmWasm docs: https://docs.cosmwasm.com/
-- CosmWasm repo: https://github.com/CosmWasm/cosmwasm
-- CosmJS repo: https://github.com/cosmos/cosmjs
-- dApps repo: https://github.com/CosmWasm/dApps
+## Note
+This code has not been audited or reviewed by a cryptographer. This app is purely meant to be a proof of concept. Please use at your own risk.
