@@ -85,6 +85,7 @@ export function Login(): JSX.Element {
           target="_blank"
           rel="noreferrer noopener">@savdont</a>.
           </LightText>
+          <LightText>This code has not been audited or reviewed by a cryptographer. This app is purely meant to be a proof of concept. Please upload passwords to the public blockchain at your own risk.</LightText>
       </MainStack>
     </PageLayout>
   );
