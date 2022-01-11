@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/cyph-dapp/static/css/main.1619c104.chunk.css",
-    "main.js": "/cyph-dapp/static/js/main.9432aa33.chunk.js",
-    "main.js.map": "/cyph-dapp/static/js/main.9432aa33.chunk.js.map",
+    "main.js": "/cyph-dapp/static/js/main.6d59652a.chunk.js",
+    "main.js.map": "/cyph-dapp/static/js/main.6d59652a.chunk.js.map",
     "runtime-main.js": "/cyph-dapp/static/js/runtime-main.7c396d08.js",
     "runtime-main.js.map": "/cyph-dapp/static/js/runtime-main.7c396d08.js.map",
-    "static/css/2.9a1efd52.chunk.css": "/cyph-dapp/static/css/2.9a1efd52.chunk.css",
+    "static/css/2.d28cd008.chunk.css": "/cyph-dapp/static/css/2.d28cd008.chunk.css",
     "static/js/2.843b9eed.chunk.js": "/cyph-dapp/static/js/2.843b9eed.chunk.js",
     "static/js/2.843b9eed.chunk.js.map": "/cyph-dapp/static/js/2.843b9eed.chunk.js.map",
     "index.html": "/cyph-dapp/index.html",
-    "precache-manifest.985c908acbaa0360af77296238aefa0f.js": "/cyph-dapp/precache-manifest.985c908acbaa0360af77296238aefa0f.js",
+    "precache-manifest.6afd04d9b6c131fe11a9d01baf8e3ec0.js": "/cyph-dapp/precache-manifest.6afd04d9b6c131fe11a9d01baf8e3ec0.js",
     "service-worker.js": "/cyph-dapp/service-worker.js",
-    "static/css/2.9a1efd52.chunk.css.map": "/cyph-dapp/static/css/2.9a1efd52.chunk.css.map",
+    "static/css/2.d28cd008.chunk.css.map": "/cyph-dapp/static/css/2.d28cd008.chunk.css.map",
     "static/css/main.1619c104.chunk.css.map": "/cyph-dapp/static/css/main.1619c104.chunk.css.map",
     "static/js/2.843b9eed.chunk.js.LICENSE.txt": "/cyph-dapp/static/js/2.843b9eed.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7c396d08.js",
-    "static/css/2.9a1efd52.chunk.css",
+    "static/css/2.d28cd008.chunk.css",
     "static/js/2.843b9eed.chunk.js",
     "static/css/main.1619c104.chunk.css",
-    "static/js/main.9432aa33.chunk.js"
+    "static/js/main.6d59652a.chunk.js"
   ]
 }
