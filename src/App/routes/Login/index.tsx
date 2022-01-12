@@ -31,6 +31,9 @@ export function Login(): JSX.Element {
   async function initKeplr() {
     const anyWindow: any = window;
     try {
+      if (!anyWindow.keplr) {
+        throw Error("Keplr extension not found, please install browser extension")
+      }
       await anyWindow.keplr.experimentalSuggestChain(configKeplr(config));
       await anyWindow.keplr.enable(config.chainId);
 
