@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cyph-dapp/precache-manifest.6afd04d9b6c131fe11a9d01baf8e3ec0.js"
+  "/cyph-dapp/precache-manifest.bfb24bf1f21b49f30bb67b4e417d07b1.js"
 );
 
 self.addEventListener('message', (event) => {
